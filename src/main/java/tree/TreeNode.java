@@ -1,6 +1,8 @@
 package tree;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 树节点的定义
@@ -56,5 +58,42 @@ public class TreeNode {
          }
         //返回总的根节点（就是集合中的第一个节点）
          return treeNodes.get(0);
+    }
+
+
+    /**
+     * 广度优先遍历二叉树
+     * @return
+     */
+    public int[] getNumsBFS(){
+        ArrayList<Integer> numsBFS = new ArrayList<>();
+        Queue<TreeNode> queue = new LinkedList<>();
+
+        queue.add(this);
+        while(!queue.isEmpty()) {
+            TreeNode node1 = queue.poll();
+            numsBFS.add(node1.val);
+
+            int flag = 0;
+            if(node1.left != null) {
+                queue.add(node1.left);
+            } else {
+                flag = 1;
+            }
+            if(node1.right != null) {
+                queue.add(node1.right);
+            } else {
+                if(flag != 1){
+                    numsBFS.add(-1);
+                }
+            }
+        }
+
+        int[] nums = new int[numsBFS.size()];
+        for(int i = 0; i < numsBFS.size(); i++) {
+            nums[i] = numsBFS.get(i);
+        }
+
+        return nums;
     }
 }

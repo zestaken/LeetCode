@@ -7,20 +7,7 @@ import java.util.Set;
 
 public class DeleteNodesAndReturnForest1110 {
     public List<TreeNode> delNodes(TreeNode root, int[] to_delete) {
-        //构造一个结果集方便查找需要删除的值
-        Set<Integer> dels = new HashSet<>();
-        for(int i : to_delete) {
-            dels.add(i);
-        }
-        //构造一个储存树的集合
-        List<TreeNode> list = new LinkedList<>();
-        //先将整颗树加入集合中，如果根节点不会被删除，则不影响，如果需要被删除则在进入根节点的判断中将根节点移除
-        list.add(root);
-
-        del(root, dels, list);
-
-        return list;
-
+        return null;
     }
 
     TreeNode del(TreeNode node, Set<Integer> dels, List<TreeNode> list) {

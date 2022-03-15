@@ -23,7 +23,7 @@ public class TreeNode {
    }
 
     /**
-     * 输入值的数组，生成二叉树（null用-1替代）
+     * 输入值的数组，生成二叉树（null用-1替代）,仅适用于完全二叉树(不是完全二叉树空的位置用null结点填充
      * @param nums
      * @return
      */
